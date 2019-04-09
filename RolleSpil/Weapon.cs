@@ -12,7 +12,7 @@ namespace RolleSpil
         int maxDamage;
         int evasionAdjust;
         string weaponName;
-
+        string test;
         public int MinDamage
         {
             get { return minDamage; }
