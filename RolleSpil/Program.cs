@@ -92,12 +92,13 @@ namespace RolleSpil
                             Console.WriteLine("What weapon would you like to use?");
                             for (int i = 0; i < arr.Length; i++)
                             {
-                                Console.WriteLine(arr[i].WeaponName + " " + arr[i].MinDamage + " " +  arr[i].MaxDamage);
+                                Console.WriteLine(i + ". " + arr[i].WeaponName + " " + arr[i].MinDamage + " " +  arr[i].MaxDamage);
                             }
-                            ((Player)mainChar).ChangingWeapon();
+                            Console.WriteLine("What weapon would you like to switch to?");
+                            string chosenWeapon = Console.ReadLine();
+                            ((Player)mainChar).ChangingWeapon(chosenWeapon);
                             break;
                     }
-
                 }
                 return winnerWinnerChickenDinner;
             }
