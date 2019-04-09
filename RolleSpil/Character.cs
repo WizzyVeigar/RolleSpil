@@ -53,6 +53,12 @@ namespace RolleSpil
             return Strength + bdmg; 
         }
 
+        /// <summary>
+        /// This is the Attack Method
+        /// </summary>
+        /// <param name="target">The Target to Attack</param>
+        /// <returns>Returns the Damage given</returns>
+        /// author: Kenneth
         public abstract int Attack(Character target);
         
     }

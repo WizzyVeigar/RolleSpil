@@ -16,6 +16,7 @@ namespace RolleSpil
 
         }
 
+
         public override int Attack(Character target)
         {
             int dmgResult = target.Defend(Strength);
