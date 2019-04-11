@@ -45,7 +45,7 @@ namespace RolleSpil
             Character Fight(Character fighter1, Character fighter2)
             {
                 Character winnerWinnerChickenDinner = null;
-                while (winnerWinnerChickenDinner == null) 
+                while (winnerWinnerChickenDinner == null)
                 {
                     Console.WriteLine("You are against a " + fighter2.CharName + "! \n");
                     while (fighter1.Health > 0 && fighter2.Health > 0)
@@ -96,7 +96,7 @@ namespace RolleSpil
                                 Console.WriteLine("What weapon would you like to switch to?");
                                 for (int i = 0; i < weaponList.Count; i++)
                                 {
-                                    Console.WriteLine(i + ". " + weaponList[i].WeaponName + " " + weaponList[i].MinDamage + " " + weaponList[i].MaxDamage);
+                                    Console.WriteLine(i + ". " + weaponList[i].ItemName + " " + weaponList[i].MinDamage + " " + weaponList[i].MaxDamage);
                                 }
                                 string chosenWeapon = Console.ReadLine();
                                 ((Player)mainChar).ChangingWeapon(chosenWeapon);
@@ -104,15 +104,17 @@ namespace RolleSpil
                         }
                     }
                 }
-                if(winnerWinnerChickenDinner == fighter1)
+                if (winnerWinnerChickenDinner == fighter1)
                 {
+                    //((Player)fighter1).GetLoot(fighter2.enemyLoot(((Wolf)fighter2).WolfLoot()));
+                    ((Player)fighter1).GetLoot(((Enemy)fighter2).GiveLoot());
+
                     Console.Clear();
-                    Console.WriteLine("You defeated The" + fighter2.CharName + "! ");
-                    ((Wolf)fighter2).WolfLoot(fighter1);
+                    Console.WriteLine("You defeated The " + fighter2.CharName + "! ");
+                    Console.ReadKey();
                 }
                 return winnerWinnerChickenDinner;
             }
-
         }
     }
 }

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace RolleSpil
 {
-    class Wolf : Character
+    class Wolf : Enemy
     {
+
         public Wolf(int health, int defense, int strength, string charName) : base(health, defense, strength, charName)
         {
-
+            EnemyDropPool = new List<Item>() { };
         }
 
         public override int Attack(Character target)
@@ -19,10 +20,19 @@ namespace RolleSpil
             return dmgResult;
         }
 
-        public MonsterLoot WolfLoot(Character loottarget)
+        public override List<Item> GiveLoot()
         {
-            MonsterLoot wolfLoot = new MonsterLoot(new Weapon(50,100,60,"Wolf Claws"), 20);
-            return wolfLoot;
+            int rng = new Random().Next(0, 101);
+            List<Item> drops = new List<Item>();
+            if(rng < 1)
+            {
+                drops.Add( EnemyDropPool[0]);
+            }
+            else if (rng < 20)
+            {
+                drops.Add(EnemyDropPool[1]);
+            }
+            return drops;
         }
 
     }

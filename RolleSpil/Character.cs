@@ -53,6 +53,7 @@ namespace RolleSpil
             return Strength + bdmg; 
         }
 
+
         /// <summary>
         /// This is the Attack Method
         /// </summary>

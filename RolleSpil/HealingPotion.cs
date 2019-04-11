@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace RolleSpil
 {
-    class HealingPotion
+    class HealingPotion : Item
     {
-        string potionname;
         int potionquantity;
     }
 }

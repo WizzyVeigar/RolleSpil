@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace RolleSpil
 {
-    class Weapon
+    class Weapon : Item
     {
         int minDamage;
         int maxDamage;
         int evasionAdjust;
-        string weaponName;
 
         public int MinDamage
         {
@@ -29,17 +28,12 @@ namespace RolleSpil
             get { return evasionAdjust; }
             set { evasionAdjust = value; }
         }
-        public string WeaponName
-        {
-            get { return weaponName; }
-            set { weaponName = value; }
-        }
         public Weapon(int minDamage, int maxDamage, int evasionAdjust, string weaponName)
         {
             MinDamage = minDamage;
             MaxDamage = maxDamage;
             EvasionAdjust = evasionAdjust;
-            WeaponName = weaponName;
+            ItemName = weaponName;
         }
     }
 }
