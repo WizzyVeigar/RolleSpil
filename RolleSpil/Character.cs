@@ -60,6 +60,6 @@ namespace RolleSpil
         /// <returns>Returns the Damage given</returns>
         /// author: Kenneth
         public abstract int Attack(Character target);
-        
+        //public abstract MonsterLoot LootDrop(Character target);
     }
 }

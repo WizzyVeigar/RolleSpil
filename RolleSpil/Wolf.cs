@@ -15,8 +15,14 @@ namespace RolleSpil
 
         public override int Attack(Character target)
         {
-            int dmgResult = target.Defend(20 + Strength);
+            int dmgResult = target.Defend(20);
             return dmgResult;
+        }
+
+        public MonsterLoot WolfLoot(Character loottarget)
+        {
+            MonsterLoot wolfLoot = new MonsterLoot(new Weapon(50,100,60,"Wolf Claws"), 20);
+            return wolfLoot;
         }
 
     }
